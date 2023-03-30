@@ -22,6 +22,7 @@
     </p>
 </form>
 
+
 <table class="table">
     <thead>
         <tr>
@@ -44,8 +45,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Movies!)
-        {
+        @foreach (var item in Model.Movies!) {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Title)

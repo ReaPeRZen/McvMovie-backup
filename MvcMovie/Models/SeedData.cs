@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace MvcMovie.Models;
 
-public static class SeedData
+public static class     SeedData
 {
     public static void Initialize(IServiceProvider serviceProvider)
     {
@@ -34,7 +34,7 @@ public static class SeedData
                     ReleaseDate = DateTime.Parse("1984-3-13"),
                     Genre = "Comedy",
                     Rating = "R ",
-                    Price = 8.99M
+                    Price = 9.99M
                 },
                 new Movie
                 {
