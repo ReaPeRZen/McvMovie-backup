@@ -21,53 +21,26 @@
         <input type="submit" value="Filter" />
     </p>
 </form>
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies![0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies![0].ReleaseDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies![0].Genre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies![0].Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies![0].Rating)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
         @foreach (var item in Model.Movies!) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReleaseDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rating)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
+            <div class="col">
+                <div class="card">
+                    <img src="http://via.placeholder.com/640x360" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">@Html.DisplayFor(modelItem => item.Rating)</li>
+                        <li class="list-group-item">@Html.DisplayFor(modelItem => item.Genre)</li>
+                    </ul>
+                    <div class="card-body">
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>|
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>|
+                        <a asp-action="Delete"asp-route-id="@item.Id">Delete</a>
+                    </div>
+                </div>
+            </div>
         }
-    </tbody>
-</table>
+     </div>
+ </div>
